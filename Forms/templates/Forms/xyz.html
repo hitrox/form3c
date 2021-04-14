@@ -1,0 +1,628 @@
+<div style="margin:0 auto;width:75%;text-align:left">
+<form action="" method="POST">
+   {% csrf_token %}  
+    <div class="container">  
+<br>  
+     <h2> <i style="font-size:24px" class="fa">&#xf0f6;</i></i>
+  <b>Receipt</b>
+  </h2><br>
+  <div class="form-group row">  
+   
+    <div class="col-sm-4">  
+      {{ form.name|as_crispy_field }}  
+    </div>  
+     
+    <div class="col-sm-4">  
+      {{ form.doctor|as_crispy_field }}  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    
+    <div class="col-sm-4">  
+      {{ form.patient|as_crispy_field }}  
+    </div>   
+    
+    <div class="col-sm-4">  
+      {{ form.treatment|as_crispy_field }}  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    
+    <div class="col-sm-4">  
+      {{ form.subtreatment|as_crispy_field }}  
+    </div>   
+    
+    <div class="col-sm-4">  
+      {{ form.amount|as_crispy_field }}  
+    </div>  
+  </div>
+  <div class="form-group row">  
+        <div class="col-sm-4">  
+      {{ form.remarks|as_crispy_field }}  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <button type="submit" class="btn btn-primary">Submit</button>  
+    </div>   
+   </div>   
+  
+</form>  
+</div>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Treatment Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Form3C+</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class=""><a href="#">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Daily Entry <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Receipt</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Income</a></li>
+          <li><a href="#">Outcome</a></li>
+        </ul>
+      </li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Master<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Treatement</a></li>
+          <li><a href="#">Sub Treatement</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Receipt Type</a></li>
+          <li><a href="#">Income Type</a></li>
+          <li><a href="#">Expense Type</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Hospital</a></li>
+          <li><a href="#">Financial Year</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Change Password</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Report<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Form3C</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Receipt Summary Collection</a></li>
+          <li><a href="#">Daily Collection Summary</a></li>
+          <li><a href="#">Treatmentwise Collection Summary</a></li>
+          <li><a href="#">Treatmentwise  Summary</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Expense Register</a></li>
+          <li><a href="#">Expense Typewise Summary</a></li>
+          <li><a href="#">Expense Summary</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Income Register</a></li>
+          <li><a href="#">Income Summary</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Backup <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Backup by Date</a></li>
+          <li><a href="#">Backup by database</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Miscellaneous <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Disclaimer</a></li>
+          <li><a href="#">Feedback</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="btn-group">
+ <button class="btn btn-primary navbar-btn">Research Data</button>
+</div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+</nav>
+ <nav>
+  
+   <nav class="navbar navbar-default">
+  <div class="container-fluid">
+   
+    <ul class="nav navbar-nav">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">New <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Receipt</a></li>
+          <li class="divider"></li>
+          <li class="active"><a href="#">Treatment</a></li>
+          <li><a href="#">Sub Treatment</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Income</a></li>
+          <li><a href="#">Expense</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Reciept</a></li>
+      <li><a href="#">Reciept Print</a></li>
+    </ul>
+    
+  </div>
+</nav>
+</nav>
+
+</header>
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-xl-6 col-md-12">
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-white">
+                                <div class="m-b-25"> <img src="{{request.user.doctor.profile_pic.url}}" class="img-radius" alt="User-Profile-Image"> </div>
+                                <h6 class="f-w-600">{{request.user.username}}</h6>
+                                <p>Doctor</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                            </div>
+                        </div>
+
+                         
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                              <form method="POST" action="" enctype="multipart/form-data">
+                              {% csrf_token %}
+                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Email</p>
+                                        <h6 class="text-muted f-w-400">rntng@gmail.com</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Phone</p>
+                                        <h6 class="text-muted f-w-400">98979989898</h6>
+                                    </div>
+                                </div>
+                                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Projects</h6>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Medical ID</p>
+                                        <h6 class="text-muted f-w-400">XXXXXXX</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Hospital</p>
+                                        <h6 class="text-muted f-w-400">Apollo</h6>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<br>
+<div class="row">
+  <div class="col-md-3">
+    <div class="card card-body">
+      <a class="btn btn-warning" href="{% url 'form-home' %}"> &#8592; Back to Profile</a>
+      <hr>
+      <h3 style="text-align: center">Account Settings</h3>
+      <hr>
+      <img class="profile-pic" src="{{request.user.doctor.profile_pic.url}}" >
+    
+    </div>
+  </div>
+  <div class="col-md-9">
+    <div class="card card-body">
+      
+      <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+            {% for i in hospital %}
+      <tr>
+        <td>{{i.hospital_name}}</td>
+        <td>{{i.doctor}}</td>
+        <td>{{i.printline1}}</td>
+        <td>{{i.printline2}}</td>
+        <td>{{i.printline3}}</td>
+      </tr>     
+      {% endfor %}
+      <input class="btn btn-primary" type="submit" name="Update Information">
+      </form>
+    </div>
+  </div>
+</div>
+
+<ul class="nav navbar-nav navbar-right">
+      <li><a href="{%url 'form-register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="{%url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+
+
+
+
+
+
+    <head>
+  <meta charset="utf-8">
+  <title>A simple, clean, and responsive HTML invoice template</title>
+
+  <style>
+    .invoice-box {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid #eee;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+      font-size: 16px;
+      line-height: 24px;
+      font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+      color: #555;
+    }
+
+    .invoice-box table {
+      width: 100%;
+      line-height: inherit;
+      text-align: left;
+    }
+
+    .invoice-box table td {
+      padding: 5px;
+      vertical-align: top;
+    }
+
+    .invoice-box table tr td:nth-child(2) {
+      text-align: right;
+    }
+
+    .invoice-box table tr.top table td {
+      padding-bottom: 20px;
+    }
+
+    .invoice-box table tr.top table td.title {
+      font-size: 45px;
+      line-height: 45px;
+      color: #333;
+    }
+
+    .invoice-box table tr.information table td {
+      padding-bottom: 40px;
+    }
+
+    .invoice-box table tr.heading td {
+      background: #eee;
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+    }
+
+    .invoice-box table tr.details td {
+      padding-bottom: 20px;
+    }
+
+    .invoice-box table tr.item td {
+      border-bottom: 1px solid #eee;
+    }
+
+    .invoice-box table tr.item.last td {
+      border-bottom: none;
+    }
+
+    .invoice-box table tr.total td:nth-child(2) {
+      border-top: 2px solid #eee;
+      font-weight: bold;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .invoice-box table tr.top table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+
+      .invoice-box table tr.information table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+    }
+
+    /* RTL */
+    .rtl {
+      direction: rtl;
+      font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    }
+
+    .rtl table {
+      text-align: right;
+    }
+
+    .rtl table tr td:nth-child(2) {
+      text-align: left;
+    }
+
+    .menu {
+      top: 50px;
+    }
+  </style>
+</head>
+
+<br><br><br>
+<div class="invoice-box">
+  <table cellpadding="0" cellspacing="0">
+    <tr class="top">
+      <td colspan="2">
+        <table>
+          <tr>
+            <td class="title">
+              <h1>Receipt</h1>
+            </td>
+
+            <td>
+
+              <!-- Date: {{Date}}--><br>
+
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr class="information">
+      <td colspan="2">
+        <table>
+          <tr>
+            <td>
+              Patient Name : {{Name}}<br>
+            </td>
+
+            <td>
+              Doctor Name :<br>
+              {{Doctor}}<br>
+
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr class="heading">
+      <td>
+        Treatment and SubTreatment
+      </td>
+      <td>
+
+      </td>
+
+    </tr>
+
+    <tr class="details">
+      <td>
+        {{Treatment}}
+      </td>
+      <td>
+        {{SubTreatment}}
+      </td>
+    </tr>
+    
+  </table>
+</div>
+
+
+
+
+
+
+
+<head>
+    <meta charset="utf-8" />
+    <title>A simple, clean, and responsive HTML invoice template</title>
+
+    <style>
+      .invoice-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color: #555;
+      }
+
+      .invoice-box table {
+        width: 100%;
+        line-height: inherit;
+        text-align: left;
+      }
+
+      .invoice-box table td {
+        padding: 5px;
+        vertical-align: top;
+      }
+
+      .invoice-box table tr td:nth-child(2) {
+        text-align: right;
+      }
+
+      .invoice-box table tr.top table td {
+        padding-bottom: 20px;
+      }
+
+      .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
+      }
+
+      .invoice-box table tr.information table td {
+        padding-bottom: 40px;
+      }
+
+      .invoice-box table tr.heading td {
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+      }
+
+      .invoice-box table tr.details td {
+        padding-bottom: 20px;
+      }
+
+      .invoice-box table tr.item td {
+        border-bottom: 1px solid #eee;
+      }
+
+      .invoice-box table tr.item.last td {
+        border-bottom: none;
+      }
+
+      .invoice-box table tr.total td:nth-child(2) {
+        border-top: 2px solid #eee;
+        font-weight: bold;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+
+        .invoice-box table tr.information table td {
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+      }
+
+      /* RTL */
+      .rtl {
+        direction: rtl;
+        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+      }
+
+      .rtl table {
+        text-align: right;
+      }
+
+      .rtl table tr td:nth-child(2) {
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="invoice-box">
+      <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+          <td colspan="2">
+            <table>
+              <tr>
+                <td class="title">
+                  Hospital Name
+                </td>
+
+                <td>
+                  Date:
+                  <br>
+                  Receipt Type: 
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr class="information">
+          <td colspan="2">
+            <table>
+              <tr>
+                <td>
+                  Addr Line1<br>
+                  Addr Line2<br>
+                  Addr Line3
+                </td>
+
+                <td>
+                  Doctor Name<br>
+                  Phone no.<br>
+                  Mail ID
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr class="heading">
+          <td>Patient Details</td>
+
+          <td></td>
+        </tr>
+
+        <tr class="item">
+          <td>Name</td>
+
+          <td>PTNAME</td>
+        </tr>
+
+        <tr class="item">
+          <td>Age</td>
+
+          <td>AGE</td>
+        </tr>
+        <tr class="item">
+          <td>Contact No.</td>
+
+          <td>9899888878</td>
+        </tr>
+        <tr class="heading">          
+          <td><br>Description of Services/Medicines </td>
+
+          <td><br>Price</td>
+        </tr>
+        
+        <tr class="item last">
+          <td>Treatment</td>
+
+          <td>TREATMENT</td>
+        </tr>
+        
+        <tr class="item">
+          <td>Sub Treatment</td>
+
+          <td>SBTREATMENT</td>
+        </tr>
+        
+        <tr class="total">
+          <td> <br /> Total:</td>
+
+          <td><br /> Amount</td>
+        </tr>
+        <tr class="total">
+          <td></td>
+
+          <td><br /><br /><br /><br /><br />Authorised Signature</td>
+        </tr>
+      </table>
+    </div>
